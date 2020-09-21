@@ -1,16 +1,9 @@
 import { createReducer } from "jeddy/jredux";
 
-const Slice = (name: string) => createReducer({
-    name,
-    initialState: { checked: true },
-    reducers: {
-        toggleCheckbox(state: any) {
-            return {
-                ...state,
-                checked: !state.checked
-            }
-        },
-    }
+const Slice = (params: { name: string, initialState: {} }) => createReducer({
+    name: params.name,
+    initialState: params.initialState,
+    reducers: {}
 })
 
-export default (name: string) => Slice(name);
+export default (params: { name: string, initialState: {} }) => Slice(params);
